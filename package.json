@@ -1,0 +1,30 @@
+{
+  "name": "pg_sql_boilerplate",
+  "version": "0.0.1",
+  "description": "few helpful functions to use with pg node database driver",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dyashkir/pg_sql_boilerplate.git"
+  },
+  "keywords": [
+    "postgres",
+    "boilerplate",
+    "node-postgres"
+  ],
+  "author": "Dmytro Yashkir",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/dyashkir/pg_sql_boilerplate/issues"
+  },
+  "homepage": "https://github.com/dyashkir/pg_sql_boilerplate",
+  "dependencies": {
+    "underscore": "~1.6.0"
+  }
+}
