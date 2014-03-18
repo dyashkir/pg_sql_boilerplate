@@ -13,7 +13,12 @@ function make_update (db, table_name, id_field){
     }).join(',');
 
     var text = 'update ' + table_name + ' set ' + set_pairs + ' where ' + id_field + '=' + id;
-    var query = { name : table_name + '_update_' + _.keys(update_obj).join('_'),
+
+    var statement_name = _.map(fields, function(a){
+      return a[0];
+    }).join('_');
+
+    var query = { name : table_name + '_update_' + statement_name,
       text : text};
 
     var ar_list = _.map(fields, function(a){
