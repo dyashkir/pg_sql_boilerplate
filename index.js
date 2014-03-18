@@ -15,7 +15,10 @@ function make_update (db, table_name, id_field){
     var text = 'update ' + table_name + ' set ' + set_pairs + ' where ' + id_field + '=' + id;
     var query = { name : table_name + '_update_' + _.keys(update_obj).join('_'),
       text : text};
-    var ar_list = _.values(update_obj);
+
+    var ar_list = _.map(fields, function(a){
+      return a[1];
+    });
 
     db.query(query, ar_list, next);
   }
