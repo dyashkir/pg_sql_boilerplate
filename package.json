@@ -1,6 +1,6 @@
 {
   "name": "pg_sql_boilerplate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "few helpful functions to use with pg node database driver",
   "main": "index.js",
   "directories": {

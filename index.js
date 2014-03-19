@@ -9,10 +9,10 @@ function make_update (db, table_name, id_field){
 
     var set_pairs = _.map(fields, function(val, i){
       var key = val[0];
-      return key + '=$' + (i + 1);
+      return key + '=$' + (i + 2);
     }).join(',');
 
-    var text = 'update ' + table_name + ' set ' + set_pairs + ' where ' + id_field + '=' + id;
+    var text = 'update ' + table_name + ' set ' + set_pairs + ' where ' + id_field + '=$1';
 
     var statement_name = _.map(fields, function(a){
       return a[0];
@@ -25,7 +25,7 @@ function make_update (db, table_name, id_field){
       return a[1];
     });
 
-    db.query(query, ar_list, next);
+    db.query(query, [id].concat(ar_list), next);
   }
 }
 
